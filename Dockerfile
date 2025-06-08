@@ -1,25 +1,29 @@
-# Fase de build (Linux)
+# Fase de build
 FROM eclipse-temurin:17-jdk AS build
 
 WORKDIR /app
 
-# Copia os arquivos do Maven Wrapper
+# Copia os arquivos necessários
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
-
-# Torna o mvnw executável (Linux)
 RUN chmod +x mvnw
-
-# Baixa dependências e faz o build
 RUN ./mvnw dependency:go-offline
-RUN ./mvnw package -DskipTests
 
-# Fase de execução (Linux)
+# Copia o restante do código-fonte e realiza o build
+COPY src ./src
+RUN ./mvnw clean package -DskipTests
+
+# Fase de execução
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
 
+# Copia o jar gerado da fase de build
+COPY --from=build /app/target/*.jar app.jar
+
+# Define a porta que será exposta
+EXPOSE 8080
 ENV PORT=8080
+
+# Comando de inicialização
+ENTRYPOINT ["java", "-jar", "app.jar"]
