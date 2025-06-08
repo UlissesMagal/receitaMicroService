@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>nutriapp</artifactId>
+    <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>nutriapp</name>
     <description>Aplicação de Nutrição e Receitas</description>
@@ -57,7 +57,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.example.nutriapp.Main</mainClass>
+                    <mainClass>com.example.demo.Main</mainClass>
                 </configuration>
                 <executions>
                     <execution>

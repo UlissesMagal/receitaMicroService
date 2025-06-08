@@ -1,10 +1,10 @@
-package com.example.nutriapp.controller;
-    
+package com.example.demo.controller;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.nutriapp.model.Receita;
-import com.example.nutriapp.repository.ReceitaRepository;
+import com.example.demo.model.Receita;
+import com.example.demo.repository.ReceitaRepository;
 
 import java.util.List;
 import java.util.Optional;

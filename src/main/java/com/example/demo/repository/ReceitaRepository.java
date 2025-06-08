@@ -1,10 +1,10 @@
-package com.example.nutriapp.repository;
+package com.example.demo.repository;
 
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.nutriapp.model.Receita;
+import com.example.demo.model.Receita;
 
 import java.util.List;
 
