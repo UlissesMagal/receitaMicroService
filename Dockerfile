@@ -1,5 +1,5 @@
 # Usando uma imagem base do OpenJDK para Windows
-FROM eclipse-temurin:17-jdk-windowsservercore-ltsc2022 AS build
+FROM openjdk:17-jdk-slim AS build
 
 # Definindo o diretório de trabalho (sintaxe do Windows)
 WORKDIR C:\\app
@@ -19,7 +19,7 @@ COPY src src
 RUN mvnw.cmd package -DskipTests
 
 # Fase 2: Imagem runtime
-FROM eclipse-temurin:17-jre-windowsservercore-ltsc2022
+FROM openjdk:17-jdk-slim
 
 # Definindo o diretório de trabalho
 WORKDIR C:\\app
