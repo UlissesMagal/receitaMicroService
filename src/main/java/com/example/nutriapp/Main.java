@@ -1,5 +1,4 @@
-
-package src.main;
+package com.example.nutriapp;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,3 +11,6 @@ public class Main {  //to cansado ja macho
     SpringApplication.run(Main.class, args);
 }
 }
+
+
+
