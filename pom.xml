@@ -56,7 +56,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>demo.src.main.java.com.example.nutriapp.NutriappApplication.java </mainClass>
+                    <mainClass>com.example.nutriapp</mainClass>
                 </configuration>
             </plugin>
             
